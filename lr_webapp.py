@@ -12,7 +12,7 @@ from sklearn.utils._testing import assert_no_warnings
 from sklearn.utils._testing import ignore_warnings
 
 
-loaded_model=pickle.load(open('D:\cdrivefiles\Desktop\Random_Forest.sav','rb'))
+loaded_model=pickle.load(open('Random_Forest.sav','rb'))
 
 def rf_prediction(input_data):
 
@@ -22,9 +22,9 @@ def rf_prediction(input_data):
 
 
     if(guess[0] == 0):
-        return "no heart disease"
+        return "no heart disease predicted"
     elif(guess[0] == 1):
-        return "heart disease"
+        return "heart disease predicted"
     else:
         return "please enter correct details"
     
@@ -48,7 +48,7 @@ def main():
     diagnosis=''
     
     
-    if st.button("Heart disease result"):
+    if st.button("Heart disease prediction"):
         diagnosis = rf_prediction([age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal])
         
     st.success(diagnosis)
